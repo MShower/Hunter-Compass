@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "hunter-compass",
+	"version": "${version}",
+	"name": "Hunter Compass",
+	"description": "Compass pointing at the player.",
+	"authors": [
+		"MeteorOfTime"
+	],
+	"contact": {
+		"homepage": "https://github.com/MShower/Hunter-Compass/",
+		"sources": "https://github.com/MShower/Hunter-Compass/"
+	},
+	"license": "GPLv3",
+	"icon": "assets/hunter-compass/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"mshower.compass.HunterCompass"
+		]
+	},
+	"mixins": [
+		"hunter-compass.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}
