@@ -34,14 +34,14 @@ public class HunterCompass implements ModInitializer {
 
                                     ServerPlayerEntity target = ctx.getSource().getServer().getPlayerManager().getPlayer(targetName);
                                     if (target == null) {
-                                        ctx.getSource().sendFeedback(() -> net.minecraft.text.Text.literal("§c目标玩家不存在！"), false);
+                                        ctx.getSource().sendFeedback(() -> net.minecraft.text.Text.literal("Can't find target."), false);
                                         return 0;
                                     }
 
                                     if (player != null) {
                                         TRACKING.put(player.getUuid(), target.getUuid());
                                     }
-                                    ctx.getSource().sendFeedback(() -> net.minecraft.text.Text.literal("§a现在追踪 " + target.getName().getString()), false);
+                                    ctx.getSource().sendFeedback(() -> net.minecraft.text.Text.literal("Now tracking " + target.getName().getString()), false);
                                     return 1;
                                 })));
             });
@@ -64,7 +64,7 @@ public class HunterCompass implements ModInitializer {
                     NbtCompound nbt = stack.getOrCreateNbt();
                     nbt.put("LodestonePos", NbtHelper.fromBlockPos(targetPos));
                     nbt.putString("LodestoneDimension", target.getEntityWorld().getRegistryKey().getValue().toString());
-                    nbt.putBoolean("LodestoneTracked", true);
+                    nbt.putBoolean("LodestoneTracked", false);
                 }
             }
         });
